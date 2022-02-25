@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Flora</string>
+    <string name="nombre">nombre</string>
+    <string name="add_button_main">add button main</string>
+    <string name="add_image_main">add image main</string>
+    <string name="general_random_description">general random description</string>
+</resources>
