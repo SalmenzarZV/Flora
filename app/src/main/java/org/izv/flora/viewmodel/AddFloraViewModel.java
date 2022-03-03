@@ -19,7 +19,6 @@ public class AddFloraViewModel extends AndroidViewModel {
     }
 
     public MutableLiveData<Long> getAddFloraLiveData() {
-
         return repository.getAddFloraLiveData();
     }
 

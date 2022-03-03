@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.AddFloraActivity">
+    tools:context=".view.activity.EditFloraActivity">
 
     <ScrollView
-        android:id="@+id/scrollViewAddFlora"
+        android:id="@+id/scrollViewEditFlora"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,8 +20,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/ivEditImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:contentDescription="@string/general_random_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck"
+                tools:srcCompat="@tools:sample/avatars" />
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddName"
+                android:id="@+id/tfEditName"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -29,21 +43,21 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/name"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddFamily"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditFamily"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/ivEditImage">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddName"
+                    android:id="@+id/tiEditName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddFamily"
+                android:id="@+id/tfEditFamily"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -51,14 +65,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/family"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddIdentification"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditIdentification"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddName">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditName">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddFamily"
+                    android:id="@+id/tiEditFamily"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,TextContrastCheck" />
@@ -66,7 +80,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddIdentification"
+                android:id="@+id/tfEditIdentification"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -74,14 +88,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/identification"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddHabitat"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditHabitat"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddFamily">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditFamily">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddIdentification"
+                    android:id="@+id/tiEditIdentification"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
@@ -89,7 +103,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddHabitat"
+                android:id="@+id/tfEditHabitat"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -97,14 +111,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/habitat"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddPhytosociology"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditPhytosociology"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddIdentification">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditIdentification">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddHabitat"
+                    android:id="@+id/tiEditHabitat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
@@ -112,7 +126,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddPhytosociology"
+                android:id="@+id/tfEditPhytosociology"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -120,14 +134,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/phytosociology"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddBiotype"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditBiotype"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddHabitat">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditHabitat">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddPhytosociology"
+                    android:id="@+id/tiEditPhytosociology"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
@@ -135,7 +149,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddBiotype"
+                android:id="@+id/tfEditBiotype"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -143,14 +157,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/biotype"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddBioReproduction"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditBioReproduction"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddPhytosociology">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditPhytosociology">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddBiotype"
+                    android:id="@+id/tiEditBiotype"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
@@ -158,7 +172,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddBioReproduction"
+                android:id="@+id/tfEditBioReproduction"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -166,14 +180,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/bio_reproduction"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddFlowering"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditFlowering"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddBiotype">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditBiotype">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddBioReproduction"
+                    android:id="@+id/tiEditBioReproduction"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
@@ -181,7 +195,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddFlowering"
+                android:id="@+id/tfEditFlowering"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -189,14 +203,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/flowering"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddFructification"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditFructification"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddBioReproduction">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditBioReproduction">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddFlowering"
+                    android:id="@+id/tiEditFlowering"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
@@ -204,7 +218,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddFructification"
+                android:id="@+id/tfEditFructification"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -212,14 +226,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/fructification"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddSexualExpression"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditSexualExpression"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddFlowering">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditFlowering">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddFructification"
+                    android:id="@+id/tiEditFructification"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -227,7 +241,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddSexualExpression"
+                android:id="@+id/tfEditSexualExpression"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -235,14 +249,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/sexual_expression"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddPollination"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditPollination"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddFructification">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditFructification">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddSexualExpression"
+                    android:id="@+id/tiEditSexualExpression"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -250,7 +264,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddPollination"
+                android:id="@+id/tfEditPollination"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -258,14 +272,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/pollination"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddDispersion"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditDispersion"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddSexualExpression">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditSexualExpression">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddPollination"
+                    android:id="@+id/tiEditPollination"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -273,7 +287,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddDispersion"
+                android:id="@+id/tfEditDispersion"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -281,14 +295,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/dispersion"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddChromosomeNumber"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditChromosomeNumber"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddPollination">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditPollination">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddDispersion"
+                    android:id="@+id/tiEditDispersion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -296,7 +310,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddChromosomeNumber"
+                android:id="@+id/tfEditChromosomeNumber"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -304,14 +318,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/chromosome_number"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddReproduction"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditReproduction"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddDispersion">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditDispersion">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddChromosomeNumber"
+                    android:id="@+id/tiEditChromosomeNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -319,7 +333,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddReproduction"
+                android:id="@+id/tfEditReproduction"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -327,14 +341,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/reproduction"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddDistribution"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditDistribution"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddChromosomeNumber">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditChromosomeNumber">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddReproduction"
+                    android:id="@+id/tiEditReproduction"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -342,7 +356,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddDistribution"
+                android:id="@+id/tfEditDistribution"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -350,14 +364,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/distribution"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddBiology"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditBiology"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddReproduction">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditReproduction">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddDistribution"
+                    android:id="@+id/tiEditDistribution"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
@@ -365,7 +379,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddBiology"
+                android:id="@+id/tfEditBiology"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -373,14 +387,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/biology"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddDemography"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditDemography"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddDistribution">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditDistribution">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddBiology"
+                    android:id="@+id/tiEditBiology"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -388,7 +402,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddDemography"
+                android:id="@+id/tfEditDemography"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -396,14 +410,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/demography"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddThreats"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditThreats"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddBiology">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditBiology">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddDemography"
+                    android:id="@+id/tiEditDemography"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -411,7 +425,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddThreats"
+                android:id="@+id/tfEditThreats"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -419,14 +433,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/threats"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddElevation"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditElevation"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddDemography">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditDemography">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddThreats"
+                    android:id="@+id/tiEditThreats"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -434,7 +448,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddElevation"
+                android:id="@+id/tfEditElevation"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -442,14 +456,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/elevation"
-                app:layout_constraintBottom_toTopOf="@+id/tfAddProposedMeasures"
+                app:layout_constraintBottom_toTopOf="@+id/tfEditProposedMeasures"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddThreats">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditThreats">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddElevation"
+                    android:id="@+id/tiEditElevation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -457,7 +471,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfAddProposedMeasures"
+                android:id="@+id/tfEditProposedMeasures"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -470,10 +484,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tfAddElevation">
+                app:layout_constraintTop_toBottomOf="@+id/tfEditElevation">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiAddProposedMeasures"
+                    android:id="@+id/tiEditProposedMeasures"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -484,7 +498,7 @@
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddFlora"
+        android:id="@+id/fabEditFlora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -494,11 +508,11 @@
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add"
+        app:srcCompat="@drawable/ic_baseline_edit_24"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddFloraCancel"
+        android:id="@+id/fabEditFloraCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -510,4 +524,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_baseline_cancel_24"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
