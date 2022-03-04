@@ -96,6 +96,8 @@ public class Repository {
         call.enqueue(new Callback<RowsResponse>() {
             @Override
             public void onResponse(Call<RowsResponse> call, Response<RowsResponse> response) {
+
+                Log.v("jamaica", response.body().toString());
                 deleteFloraLiveData.setValue(response.body().rows);
             }
 

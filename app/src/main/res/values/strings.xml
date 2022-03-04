@@ -50,4 +50,7 @@
     <string name="flora">Flora</string>
     <string name="image">Image</string>
     <string name="completed_flora_edit">Eddited</string>
+    <string name="alert_delete_flora_title">Delete this flora?</string>
+    <string name="alert_delete_flora_message">This flora will not be able anymore</string>
+    <string name="flora_deleted">Deleted</string>
 </resources>

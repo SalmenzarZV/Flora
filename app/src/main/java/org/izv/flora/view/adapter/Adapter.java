@@ -42,8 +42,8 @@ public class Adapter extends RecyclerView.Adapter<FloraViewHolder> implements Vi
     public void onBindViewHolder(@NonNull FloraViewHolder holder, int position) {
 
         Flora flora = floraList.get(position);
-        holder.rvNombre.setText(flora.getNombre());
-        holder.rvFamilia.setText(flora.getFamilia());
+        holder.rvNombre.setText("Nombre: "+flora.getNombre());
+        holder.rvFamilia.setText("Familia: "+flora.getFamilia());
         Picasso.get().load(ivFloraURL + flora.getId() + "/flora")
                 .memoryPolicy(MemoryPolicy.NO_CACHE).networkPolicy(NetworkPolicy.NO_CACHE).into(holder.rvImagen);    }
 

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -17,7 +18,6 @@ import com.squareup.picasso.Picasso;
 
 import org.izv.flora.R;
 import org.izv.flora.model.entity.Flora;
-import org.izv.flora.viewmodel.AddFloraViewModel;
 import org.izv.flora.viewmodel.EditFloraViewModel;
 
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class EditFloraActivity extends AppCompatActivity {
 
     private ImageView ivEditImage;
 
-    private FloatingActionButton fabEditFlora, fabEditFloraCancel;
+    private FloatingActionButton fabEditFlora, fabEditFloraCancel, fabDeleteFlora;
     Flora flora;
     private ArrayList<Flora> floras = new ArrayList<>();
     private String ivFloraURL = "https://informatica.ieszaidinvergeles.org:10003/ad/floraV2/public/api/imagen/";
@@ -50,6 +50,7 @@ public class EditFloraActivity extends AppCompatActivity {
         initFields();
         fabEditFlora = findViewById(R.id.fabEditFlora);
         fabEditFloraCancel = findViewById(R.id.fabEditFloraCancel);
+        fabDeleteFlora = findViewById(R.id.fabDeleteFlora);
         ivEditImage = findViewById(R.id.ivEditImage);
         setFlora();
         Picasso.get().load(ivFloraURL + flora.getId() + "/flora").memoryPolicy(MemoryPolicy.NO_CACHE).networkPolicy(NetworkPolicy.NO_CACHE).into(ivEditImage);
@@ -83,6 +84,22 @@ public class EditFloraActivity extends AppCompatActivity {
                     .setTitle(R.string.alert_cancel_add_title)
                     .setMessage(R.string.alert_cancel_edit_message)
                     .setPositiveButton(R.string.yes, (dialog, which) -> {
+                        finish();
+                    })
+                    .setNegativeButton(R.string.no, (dialog, which) -> {
+                        dialog.cancel();
+                    })
+                    .show();
+        });
+
+        fabDeleteFlora.setOnClickListener(view -> {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.alert_delete_flora_title)
+                    .setMessage(R.string.alert_delete_flora_message)
+                    .setPositiveButton(R.string.yes, (dialog, which) -> {
+                        Log.v("jamaica", String.valueOf(this.flora.getId()));
+                        efvm.deleteFlora(this.flora.getId());
+                        Toast.makeText(this, R.string.flora_deleted, Toast.LENGTH_SHORT).show();
                         finish();
                     })
                     .setNegativeButton(R.string.no, (dialog, which) -> {

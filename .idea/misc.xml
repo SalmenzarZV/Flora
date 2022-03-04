@@ -10,6 +10,10 @@
         <entry key="..\:/Users/sergi/Desktop/proyectos/Flora/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sergi/Desktop/proyectos/Flora/app/src/main/res/layout/name_dropdown_item.xml" value="0.33" />
         <entry key="..\:/Users/sergi/Desktop/proyectos/Flora/app/src/main/res/layout/rv_item.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/activity_edit_flora.xml" value="0.3390625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3390625" />
+        <entry key="app/src/main/res/layout/name_dropdown_item.xml" value="0.3390625" />
+        <entry key="app/src/main/res/layout/rv_item.xml" value="0.33" />
       </map>
     </option>
   </component>
